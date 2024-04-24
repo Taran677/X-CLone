@@ -17,10 +17,15 @@
     color: rgb(29, 155, 240);
     text-align: center;
     border: rgba(255, 255, 255, 0.397) 1px solid;
-    width: 55%;
+    width: 50%;
     font-weight: 900;
 }
 .signin:hover{
     cursor: pointer;
     background: rgba(29, 156, 240, 0.13);
+}
+@media screen and (max-width: 900px) {
+    .signin{
+        width: 65%;
+    }
 }

@@ -1,42 +1,58 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 :root {
     --white: rgb(231, 233, 234);
-  }
-  
-html, body{
+}
+
+html,
+body {
     min-width: 100%;
     min-height: 100%;
+    background: #000;
 }
-.main{
+
+.main {
     background: #000;
     width: 100%;
     height: 100vh;
     color: var(--white);
 }
-.body{
+
+.body {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
+    justify-content: stretch;
 }
-.main-body{
+
+.main-body {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    min-width: 100%;
     min-height: 100%;
 }
-.login-div{
+
+.main-body div {
+    flex-grow: 1;
+}
+
+.login-div {
+    margin-left: 3rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
 }
-.body{
+
+.body {
     padding: 1rem 0;
     display: flex;
     align-items: center;
@@ -44,24 +60,86 @@ html, body{
     width: 100%;
     height: 100%;
 }
-.logo-div{
+
+.logo-div {
     display: flex;
-    min-width: 50%;align-items: center;
+    min-width: 50%;
+    align-items: center;
     justify-content: center;
 }
-.logo-div svg{
+
+.logo-div svg {
     display: flex;
-    scale: 2.59;
+    scale: 2.8;
 }
-.main-heading{
+
+.main-heading {
     display: flex;
     font-size: 3.5rem;
     font-weight: 900;
     line-height: 8rem;
 }
-.sub-heading{
+
+.sub-heading {
     display: flex;
     font-weight: 800;
     font-size: 1.4rem;
     line-height: 3.6rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .login-div {
+        margin: 0 !important;
+    }
+
+    .logo-div {
+        flex-grow: 0;
+        min-width: 45%;
+    }
+
+    .sub-heading {
+        line-height: 3rem;
+    }
+
+    .main-heading {
+        line-height: 7rem;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .login-div {
+        margin: 0 !important;
+        flex-grow: 0 !important;
+        margin-left: 3rem !important;
+    }
+
+    .logo-div {
+        min-width: 100%;
+        min-height: 10rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .logo-div svg {
+        scale: 1;
+        flex-grow: 0;
+        scale: 0.4;
+        transform: translateY(50%);
+    }
+
+    .sub-heading {
+        line-height: 4rem !important;
+    }
+
+    .main-heading {
+        line-height: 5rem;
+        padding: 1rem 0 !important;
+
+    }
+
+    .main-body {
+        flex-direction: column;
+    }
+
 }
