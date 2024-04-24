@@ -6,13 +6,13 @@ function LoginUsing() {
       <div className={css.container}>
         <div className={`${css.google} ${css.btn}`}>
           <div className={css.logo}>
-            <img src="./assets/Google.svg" alt="google" />
+            <img src="https://raw.githubusercontent.com/Taran677/X-CLone/main/src/assets/google.svg" alt="google" />
           </div>
           <div className={css.name}>Sign up with Google</div>
         </div>
         <div className={`${css.apple} ${css.btn}`}>
           <div className={css.logo}>
-            <img src="./assets/Apple.svg" alt="apple" />
+            <img src="https://raw.githubusercontent.com/Taran677/X-CLone/main/src/assets/Apple.svg" alt="apple" />
           </div>
           <div className={css.name}>Sign up with Apple</div>
         </div>
