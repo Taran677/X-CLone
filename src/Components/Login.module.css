@@ -28,6 +28,7 @@ body {
     flex-direction: row;
     align-items: stretch;
     justify-content: stretch;
+    position:relative;
 }
 
 .main-body {
@@ -69,7 +70,6 @@ body {
 }
 
 .logo-div svg {
-    display: flex;
     scale: 2.8;
 }
 
@@ -116,7 +116,7 @@ body {
 
     .logo-div {
         min-width: 100%;
-        min-height: 10rem;
+        max-height: 5rem;
         align-items: center;
         justify-content: flex-start;
     }
@@ -140,6 +140,26 @@ body {
 
     .main-body {
         flex-direction: column;
+    }
+
+}
+@media screen and (max-width:500px) {
+    html{
+        font-size: 73% !important;
+    }
+    .logo-div{
+        position: absolute;
+        min-width: none; 
+        top: 2rem;
+        z-index: 10;
+        max-height: none;
+        display: block;
+        
+    }
+    .login-div{
+        justify-content: flex-start;
+        position: absolute;
+        top: 20%;
     }
 
 }
