@@ -1,0 +1,31 @@
+span{
+    padding: 0 !important;margin: 0 !important;
+    color: black;
+    font-weight: 900 !important;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+button div{
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 2rem;
+    position:absolute;
+    left: 20%;
+}
+button div svg{
+    scale: 0.8;
+}
+button{
+    position: relative !important;
+    display: flex !important;
+    flex-direction: row !important;
+    background: white !important;
+    margin: 0.5rem 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.8rem !important;
+    padding: 0.7rem 0 !important;
+    border-radius: 2rem !important;
+    transition: ease 0.1s !important;
+    font-weight: 700 !important;
+    min-width: 100% !important;
+}
