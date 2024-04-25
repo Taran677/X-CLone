@@ -1,0 +1,17 @@
+
+#xlogo{
+    display: flex;
+    scale: 1;
+    margin: 1rem;
+    align-self: center;
+}
+#forgot-password{
+    border: 1px solid rgba(255, 255, 255, 0.371);
+    background: transparent !important;
+}
+#forgot-password:hover{
+    background: rgba(255, 255, 255, 0.1006) !important;
+}
+#forgot-password div{
+    color: white;
+}
