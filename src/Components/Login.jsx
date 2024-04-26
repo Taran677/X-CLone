@@ -3,17 +3,22 @@ import SvgLogo from "../assets/SvgLogo";
 import Styles from "./Login.module.css";
 import LoginUsing from "./LoginUsing";
 import Signin from "./Signin";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 function Login() {
+  const [redirect, setRedirect] = useState(false);
   const [loading, setLoading] = useState(true);
   const [viewLogin, setViewLogin] = useState(false);
+  const [next, setNext] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
-
+  if (redirect) {
+    return <Redirect to="" />;
+  }
   return (
     <>
       <div className={Styles["main"]}>
@@ -30,8 +35,8 @@ function Login() {
             className={Styles["body"]}
             style={{
               background: viewLogin === true ? "rgb(27, 42, 56)" : "black",
-              pointerEvents: viewLogin === true ? "none" : "all"
-            }}            
+              pointerEvents: viewLogin === true ? "none" : "all",
+            }}
           >
             <div className={Styles["main-body"]}>
               <div className={Styles["logo-div"]}>
@@ -90,15 +95,36 @@ function Login() {
                   <div className={Styles.bline}></div>
                 </div>
                 <div className={Styles.binput}>
-                  <input
-                    type="text"
-                    className={Styles.binputForm}
-                    placeholder="Phone,email or username"
-                  />
+                  {next === false && (
+                    <input
+                      onChange={() => {
+                        setInput(true);
+                      }}
+                      type="text"
+                      className={Styles.binputForm}
+                      placeholder="Phone,email or username"
+                      style={next ? { border: "1px solid red" } : null}
+                    />
+                  )}
+
+                  {next === true && (
+                    <input
+                      type="text"
+                      className={Styles.binputForm}
+                      placeholder="Enter passsword"
+                    />
+                  )}
                 </div>
-                <div className={Styles.bbutton}>
-                  <div className={Styles.bname}>Next</div>
+                <div
+                  className={Styles.bbutton}
+                  onClick={() => {
+                    setNext(true);
+                    setRedirect(true);
+                  }}
+                >
+                  <div className={Styles.bname}>{next ? "go!" : "next"}</div>
                 </div>
+
                 <div id="forgot-password" className={Styles.bbutton}>
                   <div className={Styles.bname}>Forgot password?</div>
                 </div>
@@ -107,6 +133,10 @@ function Login() {
           </>
         )}
       </div>
+      <Router>
+        <Route path="/new-page">
+        </Route>
+      </Router>{" "}
     </>
   );
 }
